@@ -1,0 +1,21 @@
+﻿@model RoleViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add New Role</h1>
+<br />
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group">
+        <label class="col-form-label" asp-for="RoleName"></label><!--will get the type and the name of the attripute-->
+        <input class=" form-control" asp-for="RoleName" />
+        <span asp-validation-for="RoleName" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary" />
+    <a asp-action="Index" class="btn btn-light">Back To List</a>
+</form>
+@section ClientSideValidation {
+    <partial name="_ValidationScriptsPartial" />
+}
+
